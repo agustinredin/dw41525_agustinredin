@@ -13,11 +13,9 @@
 </head>
 
 <body>
-    <!-- <header class="header">
-        
-    </header> -->
-    <main class="contact">
-        <div class="header__container">
+    <div class="loader"><div class="loader__logo"></div></div>
+    <main class="contact__main">
+        <section class="header__container">
             <div class="header__logo">
                 <a href="../index.html">
                     <h1 class="hover">IG</h1>
@@ -30,51 +28,50 @@
                 <a href="services.html" class="hover">Planes</a>
                 <a href="contact.html" class="hover">Contacto</a>
             </nav>
-        </div>
-        <div class="banner-contact">
+        </section>
+        <section class="banner-contact">
             <div class="title">
                 <h1 class="contact__title">
                     <span class="red text-shadow">CONTACTO</span>
                     <hr class="divider">
                 </h1>
             </div>
-            <form action="/">
-                <div class="form__row">
-                    <span>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" placeholder="Escriba su nombre">
+        </section>
+        <form action="/">
+            <div class="form__row">
+                <span>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" placeholder="Escriba su nombre">
+                </span>
+                <span>
+                    <label for="surname">Apellido</label>
+                    <input type="text" name="surname" placeholder="Escriba su apellido">
+                </span>
+            </div>
+            <div class="form__row">
+                <span>
+                    <label for="email">Mail</label>
+                    <input type="email" name="email" placeholder="Escriba su mail">
                     </span>
                     <span>
-                        <label for="surname">Apellido</label>
-                        <input type="text" name="surname" placeholder="Escriba su apellido">
+                        <label for="service">Plan de interés</label>
+                        <select name="service">
+                            <option value="" selected disabled>Seleccione...</option>
+                            <option value="0">Ninguno</option>
+                            <option value="1">Personalizado + asesoría</option>
+                            <option value="2">Asesoría</option>
+                            <option value="3">Ciclo</option>
+                        </select>
                     </span>
-                </div>
-                <div class="form__row">
-                    <span>
-                        <label for="email">Mail</label>
-                        <input type="email" name="email" placeholder="Escriba su mail">
-                        </span>
-                        <span>
-                            <label for="plan">Plan de interés</label>
-                            <!-- usar bootstrap para el select -->
-                            <select name="plan">
-                                <option value="" selected disabled>Seleccione...</option>
-                                <option value="0">Ninguno</option>
-                                <option value="1">Personalizado + asesoría</option>
-                                <option value="2">Asesoría</option>
-                                <option value="3">Ciclo</option>
-                            </select>
-                        </span>
-                </div>
-                <div class="form__row">
-                    <label for="extra">Info. adicional</label>
-                    <textarea name="extra" rows="5" placeholder=""></textarea>
-                </div>
-                <div>
-                    <input type="submit" value="enviar">
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="form__row">
+                <label for="extra">Info. adicional</label>
+                <textarea name="extra" rows="5" placeholder=""></textarea>
+            </div>
+            <div>
+                <input type="submit" value="enviar">
+            </div>
+        </form>
         <footer class="footer">
             <div class="footer__logo">
                 <h3>IGNACIO GAMARRA</h3>
@@ -103,30 +100,40 @@
     </main>
 </body>
 
-<!-- Iconos de fontawesome -->
 <script src="https://kit.fontawesome.com/7b2a973c42.js" crossorigin="anonymous"></script>
-<script src="/scripts/init.js"></script>
 
 <script src="https://smtpjs.com/v3/smtp.js">
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 
 <script>
-
 $("form").on("submit", (e) => {
-    e.preventDefault();
+e.preventDefault();
 
-    alert("ENVIADO!");
+alert("ENVIADO!");
 })
 
-    //Experimento descartado: Botón para bajar de sección
-    // $("#scroll__btn").click(function (event) {
-    //     $("html, body").animate({ scrollTop: $(".features").position().top.toString() });
-    //     $("body").css("overflow-y", "scroll");
-    //     $("#scroll__btn").fadeOut("slow");
-    // })
+$(document).ready(() => {
+    
+    if(window.location.search != "")
+    {
+        let service = window.location.search.substring(3);        
+        setService(service)
+    }
+
+})
+
+const setService = (service) => {
+    let select = $("select[name=service]");
+
+    select.val(service)
+
+    $("html, body").animate({ scrollTop: select.position().top.toString() });
+    select.toggleClass("focus-visible")
+}
 </script>
 
 
