@@ -57,8 +57,63 @@ html {
 
 body {
     background-color: #060302;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
+
+.loader {
+    pointer-events: none;
+    z-index: 1000;
+    background-color: var(--red);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--white);
+    display: flex;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    animation: fadeout .5s ease-in-out .5s forwards;
+    opacity: 1;
+}
+
+.loader__logo {
+    display: inline-block;
+	width: 1em;
+	height: 1em;
+	color: inherit;
+	vertical-align: middle;
+	pointer-events: none;
+	border: .2em solid transparent;
+	border-top-color: currentcolor;
+	border-radius: 50%;
+	animation: 1s loader linear infinite;
+	position: relative;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 
 
 
@@ -521,7 +576,6 @@ a.text__link-white:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: var(--red);
 
     display: grid;
     grid-template-columns: 4fr;
