@@ -56,6 +56,8 @@ html {
 }
 
 body {
+    font-family: var(--main-font);
+    color: var(--white);
     background-color: #060302;
     overflow-y: hidden;
 }
@@ -63,7 +65,7 @@ body {
 .loader {
     pointer-events: none;
     z-index: 1000;
-    background-color: var(--red);
+    background-color: rgb(148, 50, 50);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -114,9 +116,6 @@ body {
     }
 }
 
-
-
-
 /* index.html */
 .main {
     background-image: url('.././images/banner_stock.png');
@@ -127,8 +126,8 @@ body {
     background-color: var(--black);
 
     display: grid;
-    grid-template-columns: 4fr;
-    grid-template-rows: 5vh 90vh 130vh 10vh;
+    grid-row-gap: 100px;
+    grid-template-rows: 1fr 8fr 12fr 3fr;
     grid-template-areas:
     "header"
     "banner"
@@ -144,31 +143,36 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    top: 5rem;
-    left: 5rem;
-    width: 5rem;
-    height: 5rem;
+    top: 10vh;
+    left: 5vw;
+    width: 4vw;
+    height: 4vw;
     border-radius: 5rem;
     background-color: red;
     cursor: pointer;
     color: var(--white);
+    transition: scale .2s;
+}
+
+.back__button:hover {
+    scale: 1.05;
 }
 
 .back__button i {
     position: fixed;
 }
 
-.tooltip{
+.back__label{
     display: block;
     opacity: 0;
     text-align: center;
     position: fixed;
-    padding-top: 9rem;
+    padding-top: 12rem;
     font-size: 2rem;
     transition: all .2s;
 }
 
-.tooltip:hover{
+.back__label:hover{
     opacity: 1;
 }
 
@@ -176,6 +180,7 @@ body {
     z-index: 999;
     display: flex;
     position: sticky;
+    height: 6vh;
     backdrop-filter: blur(20px);
     top: 0;
     background: rgba(0, 0, 0, 0.4);
@@ -186,7 +191,6 @@ body {
 .header__logo {
     display: flex;
     width: 20%;
-    padding: 1rem 2rem 1rem 2rem;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -215,6 +219,10 @@ nav a {
     text-decoration: none;
     color: var(--white);
     font-size: 2rem;
+}
+
+nav i {
+    display: none !important;
 }
 
 .services__title {
@@ -374,7 +382,7 @@ a.text__link:hover {
     background-size: cover;
 
     display: grid;
-    grid-template-columns: 1fr;
+    grid-row-gap: 100px;
     grid-template-rows: 1fr 10fr 15fr 5fr;
     grid-template-areas:
     "header"
@@ -426,26 +434,23 @@ a.text__link:hover {
 }
 
 .footer {
+    width: 100%;
     grid-area: footer;
     z-index: 999;
-    font-size: 2rem;
     color: var(--white);
-    max-width: var(--justify-width);
-    margin: auto 20rem;
     position: relative;
     bottom: 0;
     text-align: left;
-    display: grid;
-    grid-template-columns: 3fr repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding-bottom: 2rem;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .footer__logo {
 
-    grid-area: 1 / 1 / 2 / 2; 
+    /* grid-area: 1 / 1 / 2 / 2;  */
     text-align: center;
 }
 
@@ -457,7 +462,7 @@ a.text__link:hover {
 }
 
 .footer__info {
-    grid-area: 1 / 2 / 2 / 3; 
+    /* grid-area: 1 / 2 / 2 / 3;  */
     text-align: left;
 }
 
@@ -578,8 +583,7 @@ a.text__link-white:hover {
     background-size: cover;
 
     display: grid;
-    grid-template-columns: 4fr;
-    grid-template-rows: 5vh 20vh 270vh 20vh;
+    grid-row-gap: 100px;
     grid-template-areas:
     "header"
     "banner"
@@ -601,7 +605,7 @@ a.text__link-white:hover {
     border: 2px solid var(--red);
     backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,0.4);
-    padding: 2rem 4rem 2rem 4rem;
+    padding: 1vh 1vw 1vw;
 }
 
 .biography__block {
@@ -702,7 +706,7 @@ a.text__link-white:hover {
 
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-row-gap: 100px;
     grid-template-rows: 1fr 5fr 10fr 5fr;
     grid-template-areas:
     "header"
@@ -846,7 +850,7 @@ input[type=submit]{
 
 /* services.html */
 
-.services {
+.services__main {
     background-image: url('.././images/banner_stock-services.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -953,14 +957,13 @@ input[type=submit]{
 }
 
 .contact__cta {
-    width: 100vw;
     background-color: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid var(--white);
     border-top: 1px solid var(--white);
     margin: 3vh 0 3vh 0;
 }
 
-.container {
+._container {
     max-width: var(--justify-width-md);
     margin: auto;
     text-align: center;
@@ -969,7 +972,7 @@ input[type=submit]{
     padding-bottom: 5rem;
 }
 
-.container a {
+._container a {
     font-size: 3rem;
     background-color: red;
     padding: 0.5rem;
@@ -1090,11 +1093,16 @@ input[type=submit]{
         align-content: center;
         padding-bottom: 25px;
     }
+    .banner__about__cta-white {
+        margin: 0;
+        margin-top: 2rem;
+    }
     .features {
         border: none;
         border-top: 1px solid var(--white);
         max-width: 100%;
         text-align: center;
+        padding: 0 0 0 0;
     }
     .banner-contact {
         background: none;
@@ -1115,15 +1123,15 @@ input[type=submit]{
     .divider {
         display: none;
     }
-    .footer__logo, .footer__info, .footer__sitemap {
-        padding: 0 2rem 0 2rem;
-    }
     .about-me {
         grid-template-rows: 5vh 20vh 160vh 20vh;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .back__button {
+        display: none;
+    }
     html {
         font-size: 50%;
     }
@@ -1136,7 +1144,6 @@ input[type=submit]{
     .header__container {
         position: sticky;
         top: 0px;
-        height: 6vh;
         width: 100%;
         z-index: 999;
     }
@@ -1188,9 +1195,8 @@ input[type=submit]{
         padding: 0 5rem;
     }
     .footer {
-        margin: 0 0 0 5vw;
         display: flex;
-        flex-flow: column wrap;
+        flex-direction: column;
         align-content: center;
         text-align: center;
     }
@@ -1269,6 +1275,54 @@ input[type=submit]{
         padding-top: 1vh;
     }
     .main {
-        grid-template-rows: 5vh 90vh 190vh 10vh;
+        grid-template-rows: 5vh 90vh 210vh 30vh;
     }
 }
+
+/* 13.9: Hamburger menu con BOOTSTRAP*/
+
+/* 
+@media screen and (max-width: 991px) {
+    nav {
+        position: relative;
+        top:20%;
+        flex-direction: column;
+        align-content: flex-end;
+    }
+} */
+
+/* @media screen and (max-width: 900px) {
+    nav {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+    }
+    nav a {
+        display: none;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-size: 5rem;
+    }
+    nav i {
+        align-self: flex-end;
+        display: block !important;
+        padding: 3rem;
+        font-size: 6rem;
+        color: var(--white);
+    }
+    .header__container-open {
+        z-index: 999;
+        display: flex;
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.4);
+        grid-area: header;
+        position: absolute;
+        top: 0px;
+        height: 40vh;
+        width: 100%;
+        z-index: 999;
+    }
+    .header__logo-hidden {
+        display: none;
+    }
+} */
