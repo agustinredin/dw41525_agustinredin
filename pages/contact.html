@@ -117,7 +117,8 @@ alert("ENVIADO!");
 })
 
 $(document).ready(() => {
-    
+    setTimeout(__scroll, 1000)
+
     if(window.location.search != "")
     {
         let service = window.location.search.substring(3);        
@@ -133,6 +134,11 @@ const setService = (service) => {
 
     $("html, body").animate({ scrollTop: select.position().top.toString() });
     select.toggleClass("focus-visible")
+}
+
+const __scroll = () => {
+    $("body").css("overflow-y", "scroll");
+    console.log("scroll!")
 }
 </script>
 
