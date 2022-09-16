@@ -5,16 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Ignacio Gamarra - CONTACTO</title>
+
+    <!-- STYLES -->
     <link rel="stylesheet" href=".././css/styles.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Staatliches&display=swap">
+    <!--  -->
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/7b2a973c42.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--  -->
 </head>
 
 <body>
-    <div class="loader"><div class="loader__logo"></div></div>
+    <div class="loader">
+        <div class="loader__logo"></div>
+    </div>
     <main class="contact__main">
+        <!-- <div class="back__button" id="backBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <div class="back__label">Volver</div>
+        </div> -->
         <section class="header__container">
             <div class="header__logo">
                 <a href="../index.html">
@@ -22,6 +39,7 @@
                 </a>
             </div>
             <nav>
+                <i class="fa-solid fa-bars" id="hamburger"></i>
                 <a href="../index.html" class="hover">Home</a>
                 <a href="about-me.html" class="hover">Sobre mí</a>
                 <a href="features.html" class="hover">Mis métodos</a>
@@ -52,17 +70,17 @@
                 <span>
                     <label for="email">Mail</label>
                     <input type="email" name="email" placeholder="Escriba su mail">
-                    </span>
-                    <span>
-                        <label for="service">Plan de interés</label>
-                        <select name="service">
-                            <option value="" selected disabled>Seleccione...</option>
-                            <option value="0">Ninguno</option>
-                            <option value="1">Personalizado + asesoría</option>
-                            <option value="2">Asesoría</option>
-                            <option value="3">Ciclo</option>
-                        </select>
-                    </span>
+                </span>
+                <span>
+                    <label for="service">Plan de interés</label>
+                    <select name="service">
+                        <option value="" selected disabled>Seleccione...</option>
+                        <option value="0">Ninguno</option>
+                        <option value="1">Personalizado + asesoría</option>
+                        <option value="2">Asesoría</option>
+                        <option value="3">Ciclo</option>
+                    </select>
+                </span>
             </div>
             <div class="form__row">
                 <label for="extra">Info. adicional</label>
@@ -81,10 +99,15 @@
                 <h3>11 2345-6789 <span>AR</span></h3>
                 <p>Dirección 1234, Buenos Aires</p>
                 <div class="footer__socials">
-                    <a href="https://instagram.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://facebook.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=549123456789&text=Hola&source=&data=&app_absent=0" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/user" target="blank" rel="noopener noreferrer"
+                        class="hover-simple"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=549123456789&text=Hola&source=&data=&app_absent=0"
+                        target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer__sitemap">
@@ -100,41 +123,7 @@
     </main>
 </body>
 
-<script src="https://kit.fontawesome.com/7b2a973c42.js" crossorigin="anonymous"></script>
-
-<script src="https://smtpjs.com/v3/smtp.js">
-
-</script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-
-<script>
-$("form").on("submit", (e) => {
-e.preventDefault();
-
-alert("ENVIADO!");
-})
-
-$(document).ready(() => {
-    
-    if(window.location.search != "")
-    {
-        let service = window.location.search.substring(3);        
-        setService(service)
-    }
-
-})
-
-const setService = (service) => {
-    let select = $("select[name=service]");
-
-    select.val(service)
-
-    $("html, body").animate({ scrollTop: select.position().top.toString() });
-    select.toggleClass("focus-visible")
-}
-</script>
-
+<!-- APP -->
+<script src=".././scripts/app.js"></script>
 
 </html>
