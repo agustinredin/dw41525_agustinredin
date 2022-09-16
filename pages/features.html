@@ -15,6 +15,10 @@
 <body>
     <div class="loader"><div class="loader__logo"></div></div>
     <main class="features__main">
+        <!-- <div class="back__button" id="backBtn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <div class="back__label">Volver</div>
+        </div> -->
         <section class="header__container">
             <div class="header__logo">
                 <a href="../index.html">
@@ -145,16 +149,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 
-<script>       
-    $(document).ready(() => {
-        setTimeout(__scroll, 1000)
-    })
-
-    const __scroll = () => {
-        $("body").css("overflow-y", "scroll");
-        console.log("scroll!")
-    }
-</script>
+<script src=".././scripts/app.js"></script>
 
 
 </html>
