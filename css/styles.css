@@ -188,32 +188,47 @@ body {
     grid-area: header;
 }
 
-.header__logo {
+.navbar-brand {
     display: flex;
-    width: 20%;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.header__logo h1 {
-    font-size: 4rem;
+.navbar-brand h1 {
+    font-size: 3rem;
     font-style: italic;
     font-family: var(--title-font);
     color: var(--white);
     letter-spacing:0.1rem;
+    margin:0 0 0 0 !important;
 }
 
-nav {
+.navbar {
+    z-index: 999;
+    display: flex;
+    position: sticky;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 8vh;
+    backdrop-filter: blur(10px);
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+
+    grid-area: header;
+}
+
+.navbar-nav {
     width: 70%;
     text-align: right;
     display: flex;
     flex-direction: row;
+    gap: 2rem;
     align-items: center;
     justify-content: space-around;
 }
 
-nav a { 
+.navbar-nav a { 
     font-family: var(--main-font);
     cursor: pointer;
     text-decoration: none;
@@ -221,8 +236,34 @@ nav a {
     font-size: 2rem;
 }
 
-nav i {
-    display: none !important;
+.disabled {
+    pointer-events: none !important;
+    color: rgb(216, 216, 216) !important;
+}
+
+.navbar-toggler {
+    background: transparent !important;
+    border: 1px solid white;
+}
+
+.navbar-toggler:focus {
+    outline:none;
+}
+
+.navbar-toggler-icon {
+    display: inline-flex;
+    width: 1.5em;
+    align-items: center;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    justify-content: center;
+}
+
+.navbar-toggler i {
+    color: white;
 }
 
 .services__title {
@@ -304,7 +345,7 @@ a.text__link:hover {
     background: var(--red-darker);
 }
 
-.banner__about__cta {
+.banner__about .btn-danger {
     cursor: pointer;
     font-size: 2rem;
     font-family: var(--main-font);
@@ -318,7 +359,7 @@ a.text__link:hover {
     border-radius: 4rem;
 }
 
-.banner__about__cta a {
+.banner__about .btn-danger a{
     color: var(--white);
     text-decoration: none;
     font-size: 2rem;
@@ -1250,6 +1291,7 @@ input[type=submit]{
     }
     .biography__container {
         margin: 0;
+        padding: 2rem;
         max-width: 100%;
         border: none;
         border-top: 1px solid var(--red);
@@ -1281,15 +1323,16 @@ input[type=submit]{
 
 /* 13.9: Hamburger menu con BOOTSTRAP*/
 
-/* 
+
 @media screen and (max-width: 991px) {
-    nav {
-        position: relative;
-        top:20%;
+    .navbar-nav {
         flex-direction: column;
-        align-content: flex-end;
+        align-items: flex-end;
     }
-} */
+    .navbar-toggler {
+        background: white;
+    }
+}
 
 /* @media screen and (max-width: 900px) {
     nav {
