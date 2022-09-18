@@ -1,6 +1,6 @@
 const init = () => {
 
-    window.onbeforeunload = function () {
+    window.onload = function () {
         window.scrollTo(0, 0);
       }
 
@@ -30,6 +30,8 @@ const init = () => {
     }
 
     $("#hamburger").on("click", displayMenu)
+
+    $("#hamburger").on("touchstart", displayMenu)
 
     let main = $("main").attr("class").split('__')[0]
 
