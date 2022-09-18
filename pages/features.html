@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignacio Gamarra - MIS MÉTODOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href=".././css/styles.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
@@ -13,140 +15,163 @@
 </head>
 
 <body>
-    <div class="loader"><div class="loader__logo"></div></div>
+    <div class="loader">
+        <div class="loader__logo"></div>
+    </div>
     <main class="features__main">
-        <!-- <div class="back__button" id="backBtn">
-            <i class="fa-solid fa-arrow-left"></i>
-            <div class="back__label">Volver</div>
-        </div> -->
-        <section class="header__container">
-            <div class="header__logo">
-                <a href="../index.html">
-                    <h1 class="hover">IG</h1>
-                </a>
-            </div>
-            <nav>
-                <a href="../index.html" class="hover">Home</a>
-                <a href="about-me.html" class="hover">Sobre mí</a>
-                <a href="features.html" class="hover">Mis métodos</a>
-                <a href="services.html" class="hover">Planes</a>
-                <a href="contact.html" class="hover">Contacto</a>
-            </nav>
-        </section>
-        <section class="banner">
-            <div class="banner__container">
-                <div class="title">
-                    <h1>
-                        MÉTODOS
-                    </h1>
-                </div>
-                <div class="banner__about">
-                    <p>
-                        Mis métodos son los pilares de mi entrenamiento. Los considero <br>
-                        esenciales a la hora de realizar un <a href="#method3" class="text__link-white">entrenamiento integral</a>  <br>
-                        ya que junto con la <a href="https://es.wikipedia.org/wiki/Calistenia" class="text__link-white">calistenia</a> lograrán <br>
-                        que te superes mental y fisicamente.
+        <nav class="navbar navbar-expand-lg justify-content-space-around">
+            <a class="navbar-brand" href="#">
+                <h1 class="hover">IG</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+            </button>
 
-                    </p>
-                    <a href="#features" class="hover"><button id="features__main__cta" class="banner__about__cta-white hover">Sabé mas</button></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-end ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" href="about-me.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Mis métodos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" href="services.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="display-4">
+                        <h1>MÉTODOS</h1>
+                    </div>
+                    <h4>Mis métodos son los pilares de mi entrenamiento. Los considero</h4>
+                    <h4>esenciales a la hora de realizar un <a href="#method3" class="text__link-white">entrenamiento
+                            integral</a></h4>
+                    <h4>ya que junto con la <a href="https://es.wikipedia.org/wiki/Calistenia"
+                            class="text__link-white">calistenia</a> lograrán</h4>
+                    <h4>que te superes mental y fisicamente.</h4>
+                    <hr class="my-4">
                 </div>
             </div>
-        </section>
+        </div>
         <section class="features">
             <h3 class="features__subtitle">
                 Mis métodos
             </h3>
             <hr class="divider">
-            <div class="features__container">
-                <div class="feature">
-                    <img src=".././images/feature-stock.jpg" alt="Isometría">
-                    <h3>
-                        Isometría
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                    </p>
-                </div>
-                <div class="feature">
-                    <img src=".././images/feature-stock.jpg" alt="Isometría">
-                    <h3>
-                        Isometría
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                    </p>
-                </div>
-                <div class="feature" id="method3">
-                    <img src=".././images/feature-stock.jpg" alt="Isometría">
-                    <h3>
-                        Isometría
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                    </p>
-                </div>
-                <div class="feature">
-                    <img src=".././images/feature-stock.jpg" alt="Isometría">
-                    <h3>
-                        Isometría
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                    </p>
+            <div class="features__container" id="features">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 feature">
+                        <img src=".././images/feature-stock.jpg" alt="Isometría">
+                        <h3>
+                            Isometría
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex
+                            ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 feature">
+                        <img src=".././images/feature-stock.jpg" alt="Isometría">
+                        <h3>
+                            Isometría
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex
+                            ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 feature">
+                        <img src=".././images/feature-stock.jpg" alt="Isometría">
+                        <h3>
+                            Isometría
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex
+                            ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 feature">
+                        <img src=".././images/feature-stock.jpg" alt="Isometría">
+                        <h3>
+                            Isometría
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex
+                            ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
-    <footer class="footer">
-        <div class="footer__logo">
-            <h3>IGNACIO GAMARRA</h3>
-            <p>Asistente para dominar la fuerza corporal</p>
-        </div>
-        <div class="footer__info">
-            <h3>11 2345-6789 <span>AR</span></h3>
-            <p>Dirección 1234, Buenos Aires</p>
-            <div class="footer__socials">
-                <a href="https://instagram.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://twitter.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=549123456789&text=Hola&source=&data=&app_absent=0" target="blank" rel="noopener noreferrer" class="hover-simple"><i class="fa-brands fa-whatsapp"></i></a>
+        <footer class="footer">
+            <div class="footer__logo">
+                <h3>IGNACIO GAMARRA</h3>
+                <p>Asistente para dominar la fuerza corporal</p>
             </div>
-        </div>
-        <div class="footer__sitemap">
-            <ul>
-                <li><a href="../index.html" class="hover">Home</a></li>
-                <li><a href="about-me.html" class="hover">Sobre mí</a></li>
-                <li><a href="features.html" class="hover">Mis métodos</a></li>
-                <li><a href="services.html" class="hover">Planes</a></li>
-                <li><a href="contact.html" class="hover">Contacto</a></li>
-            </ul>
-        </div>
-    </footer>
+            <div class="footer__info">
+                <h3>11 2345-6789 <span>AR</span></h3>
+                <p>Dirección 1234, Buenos Aires</p>
+                <div class="footer__socials">
+                    <a href="https://instagram.com/user" target="blank" rel="noopener noreferrer"
+                        class="hover-simple"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/user" target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=549123456789&text=Hola&source=&data=&app_absent=0"
+                        target="blank" rel="noopener noreferrer" class="hover-simple"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer__sitemap">
+                <ul>
+                    <li><a href="../index.html" class="hover">Home</a></li>
+                    <li><a href="about-me.html" class="hover">Sobre mí</a></li>
+                    <li><a href="features.html" class="hover">Mis métodos</a></li>
+                    <li><a href="services.html" class="hover">Planes</a></li>
+                    <li><a href="contact.html" class="hover">Contacto</a></li>
+                </ul>
+            </div>
+        </footer>
     </main>
 </body>
 
 <script src="https://kit.fontawesome.com/7b2a973c42.js" crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
 <script src=".././scripts/app.js"></script>

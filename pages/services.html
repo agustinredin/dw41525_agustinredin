@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignacio Gamarra - PLANES</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href=".././css/styles.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
@@ -15,36 +17,50 @@
 <body>
     <div class="loader"><div class="loader__logo"></div></div>
     <main class="services__main">
-        <!-- <div class="back__button" id="backBtn">
-            <i class="fa-solid fa-arrow-left"></i>
-            <div class="back__label">Volver</div>
-        </div> -->
-        <div class="header__container">
-            <div class="header__logo">
-                <a href="../index.html">
-                    <h1 class="hover">IG</h1>
-                </a>
+        <nav class="navbar navbar-expand-lg justify-content-space-around">
+            <a class="navbar-brand" href="#">
+                <h1 class="hover">IG</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-end ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" href="about-me.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" href="features.html">Mis métodos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
             </div>
-            <nav>
-                <a href="../index.html" class="hover">Home</a>
-                <a href="about-me.html" class="hover">Sobre mí</a>
-                <a href="features.html" class="hover">Mis métodos</a>
-                <a href="services.html" class="hover">Planes</a>
-                <a href="contact.html" class="hover">Contacto</a>
-            </nav>
+        </nav>
+        <div class="jumbotron jumbotron-fluid text-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="display-4"><h1>PLANES</h1></div>
+                            <h2 class="font-italic mb-5">¡Seleccioná uno de la lista!</h2>
+                          <hr class="my-4">
+                      </div>
+                </div>
         </div>
-            <div class="services__title">
-                <span class="text-shadow">PLANES</span>
-                <h3 class="subtitle">
-                    ¡Seleccioná uno de la lista!
-                </h3>
-            </div>
         <div class="services__container">
-                <div class="service box-shadow">
+                <div class="service">
                     <a rel="noopener noreferrer" target="_blank"  href="contact.html?q=3" class="overlay__text">
                         Seleccionar
                     </a>
-                    <h3 class="text-shadow-white">3</h3>
+                    <h3>3</h3>
                     <div class="service__desc">
                         <h4>Armado de plan</h4>
                         <i class="fa-solid fa-dumbbell"></i>
@@ -58,7 +74,7 @@
                         <li>Feature 2</li>
                     </ul>
                 </div>
-            <div class="service box-shadow">
+            <div class="service">
                 <a rel="noopener noreferrer" target="_blank" href="contact.html?q=1" class="overlay__text">
                     Seleccionar
                 </a>
@@ -81,7 +97,7 @@
                     <li>Feature 5</li>
                 </ul>
             </div>
-            <div class="service box-shadow">
+            <div class="service">
                 <a rel="noopener noreferrer" target="_blank"  href="contact.html?q=2" class="overlay__text">
                     Seleccionar
                 </a>
@@ -103,7 +119,7 @@
             </div>
         </div>
         <div class="contact__cta">
-            <div class="_container">
+            <div class="contact__cta__container">
                 <a href="https://api.whatsapp.com/send?phone=549123456789&text=Hola&source=&data=&app_absent=0"
                     target="blank" rel="noopener noreferrer" class="hover">CONTACTAME</a>
             </div>
@@ -142,8 +158,14 @@
 </body>
 
 <script src="https://kit.fontawesome.com/7b2a973c42.js" crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
 
 <script src=".././scripts/app.js"></script>

@@ -4,7 +4,6 @@ const init = () => {
         window.scrollTo(0, 0);
       }
 
-
     $("form").on("submit", (e) => {
         e.preventDefault();
         
@@ -12,38 +11,7 @@ const init = () => {
     })
 
     jQuery(function() {
-        setTimeout(__scroll, 1000)
-    
-        //usar query string params
-        // let queryString = window.location.search;
-        // if(queryString != '')
-        // {
-        //     let service = queryString.substring(3);
-        //     setService(service)
-
-        //     //Parseo para botón de vuelta
-        //     if(window.innerWidth > 768)
-        //     {
-        //         let backBtn = $("#backBtn");
-        //         backBtn.css("display", "flex");
-
-        //         let prev = queryString.substring(queryString.indexOf('prev='), queryString.length).slice(5)
-        //         let current = window.location.href.slice(window.location.href.lastIndexOf('/') + 1);
-
-        //         let redirect = prev.startsWith('index.html') ? '../index.html' : prev;
-
-        //         $('a.hover').each(function(){
-        //             this.href += `?prev=${current}`
-        //         })
-
-        //         console.log(prev)
-        //         console.log(current)
-        //         console.log(redirect)
-                
-        //         backBtn.css("display", "flex")
-        //         backBtn.attr("onclick", `window.location.href=${redirect}`)
-        //     }
-        // }
+        setTimeout(__scroll, 800)
     })
     
     const setService = (service) => {
@@ -51,18 +19,28 @@ const init = () => {
     
         select.val(service)
     
-        // $("html, body").animate({ scrollTop: select.position().top.toString() });
         select.toggleClass("focus-visible")
     }
     
     const __scroll = () => {
         $("body").css("overflow-y", "scroll");
         console.log("scroll!")
-
+        
         SmoothScroll(document, 120, 12)
     }
 
     $("#hamburger").on("click", displayMenu)
+
+    let main = $("main").attr("class").split('__')[0]
+
+    if(main == 'contact') {
+        let serviceSelected = window.location.href.split('?q=');
+        if(serviceSelected.length > 1)
+        {
+            setService(serviceSelected[1]);
+        }
+    }
+
 }
 
 const SmoothScroll = (target, speed, smooth) => {
