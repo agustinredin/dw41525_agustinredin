@@ -4,6 +4,12 @@ const init = () => {
         window.scrollTo(0, 0);
       }
 
+    //   $(document).on("scroll", function(ev){
+    //     if(window.scrollY > 400) {
+    //         $(".features").addClass("active")
+    //     }
+    //   })
+
     $("form").on("submit", (e) => {
         e.preventDefault();
         
