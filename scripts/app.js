@@ -2,6 +2,8 @@ const init = () => {
 
     window.onload = function () {
         window.scrollTo(0, 0);
+
+        console.log("29.9: pre generics v2 - incluido SEO y SASS a fondo")
       }
 
     //   $(document).on("scroll", function(ev){
@@ -32,16 +34,16 @@ const init = () => {
         $("body").css("overflow-y", "scroll");
         console.log("scroll!")
         
-        SmoothScroll(document, 120, 12)
+        // SmoothScroll(document, 120, 12)
     }
 
     $("#hamburger").on("click", displayMenu)
 
     $("#hamburger").on("touchstart", displayMenu)
 
-    let main = $("main").attr("class").split('__')[0]
+    let main = $("main").attr("class");
 
-    if(main == 'contact') {
+    if(main.split('__')[1] == 'contact') {
         let serviceSelected = window.location.href.split('?q=');
         if(serviceSelected.length > 1)
         {
@@ -51,69 +53,69 @@ const init = () => {
 
 }
 
-const SmoothScroll = (target, speed, smooth) => {
-    if (target === document)
-        target = (document.scrollingElement
-            || document.documentElement
-            || document.body.parentNode
-            || document.body) // cross browser support for document scrolling
-    var moving = false
-    var pos = target.scrollTop
-    var frame = target === document.body
-        && document.documentElement
-        ? document.documentElement
-        : target // safari is the new IE
+// const SmoothScroll = (target, speed, smooth) => {
+//     if (target === document)
+//         target = (document.scrollingElement
+//             || document.documentElement
+//             || document.body.parentNode
+//             || document.body) // cross browser support for document scrolling
+//     var moving = false
+//     var pos = target.scrollTop
+//     var frame = target === document.body
+//         && document.documentElement
+//         ? document.documentElement
+//         : target // safari is the new IE
 
-    target.addEventListener('mousewheel', scrolled, { passive: false })
-    target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+//     target.addEventListener('mousewheel', scrolled, { passive: false })
+//     target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
 
-    function scrolled(e) {
-        e.preventDefault(); // disable default scrolling
+//     function scrolled(e) {
+//         e.preventDefault(); // disable default scrolling
 
-        var delta = normalizeWheelDelta(e)
+//         var delta = normalizeWheelDelta(e)
 
-        pos += -delta * speed
-        pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
+//         pos += -delta * speed
+//         pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
 
-        if (!moving) update()
-    }
+//         if (!moving) update()
+//     }
 
-    function normalizeWheelDelta(e) {
-        if (e.detail) {
-            if (e.wheelDelta)
-                return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
-            else
-                return -e.detail / 3 // Firefox
-        } else
-            return e.wheelDelta / 120 // IE,Safari,Chrome
-    }
+//     function normalizeWheelDelta(e) {
+//         if (e.detail) {
+//             if (e.wheelDelta)
+//                 return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) // Opera
+//             else
+//                 return -e.detail / 3 // Firefox
+//         } else
+//             return e.wheelDelta / 120 // IE,Safari,Chrome
+//     }
 
-    function update() {
-        moving = true
+//     function update() {
+//         moving = true
 
-        var delta = (pos - target.scrollTop) / smooth
+//         var delta = (pos - target.scrollTop) / smooth
 
-        target.scrollTop += delta
+//         target.scrollTop += delta
 
-        if (Math.abs(delta) > 0.5)
-            requestFrame(update)
-        else
-            moving = false
-    }
+//         if (Math.abs(delta) > 0.5)
+//             requestFrame(update)
+//         else
+//             moving = false
+//     }
 
-    var requestFrame = function () { // requestAnimationFrame cross browser
-        return (
-            window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            function (func) {
-                window.setTimeout(func, 1000 / 50);
-            }
-        );
-    }()
-}
+//     var requestFrame = function () { // requestAnimationFrame cross browser
+//         return (
+//             window.requestAnimationFrame ||
+//             window.webkitRequestAnimationFrame ||
+//             window.mozRequestAnimationFrame ||
+//             window.oRequestAnimationFrame ||
+//             window.msRequestAnimationFrame ||
+//             function (func) {
+//                 window.setTimeout(func, 1000 / 50);
+//             }
+//         );
+//     }()
+// }
 
 let openMenu = false;
 

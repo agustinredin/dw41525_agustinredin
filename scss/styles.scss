@@ -41,7 +41,67 @@ body {
 
 // fin de general
 
+// uso de scss: no fue necesario el uso de mixins
+
+$fonts: (
+    xs: 1rem,
+    sm: 1.5rem,
+    md: 1.75rem,
+    lg: 2rem,
+    xl: 3rem,
+    xxl: 5rem
+);
+
+$content: (
+    banner-img1: '.././images/banner-img1.jpg',
+    features-img1: '.././images/features-img1.jpg',
+    features-img1-1: '.././images/features-img1-1.jpg',
+    features-img1-2: '.././images/features-img1-2.jpg',
+    features-img2: '.././images/features-img2.jpg',
+    features-img3: '.././images/features-img3.jpg',
+    features-img4: '.././images/features-img4.jpg',
+    features-img4-1: '.././images/features-img4-1.jpg',
+    features-img4-2: '.././images/features-img4-2.jpg',
+    aboutme-img1: '.././images/aboutme-img1.jpg',
+    aboutme-img2: '.././images/aboutme-img2.jpg',
+    aboutme-img3: '.././images/aboutme-img3.jpg',
+);
+
+@each $k, $v in $content {
+    .content__#{$k} {
+        background-image: url($v);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $black;
+    }
+}
+
+@each $k, $v in $fonts {
+    .text-#{$k}{
+        font-size: $v;
+    }
+}
+
+@for $i from 1 through 5 {
+    .display-#{$i} {
+        font-size: 6rem / ($i - $i/2);
+        @if($i < 4){
+            font-family: 'Staatliches', cursive;
+        }
+    }
+    .rounded-#{$i} {
+        border-radius: #{$i}rem;
+    }
+}
+
+// fin de uso de scss
+
 // misc y helpers
+
+hr {
+    background: $white;
+}
 
 a{
     &:visited, &:link {
@@ -63,9 +123,8 @@ a.text__link {
 }
 
 a.text__link-white {
+    @extend a.text__link;
     color: $black;
-    outline: none;
-    font-weight: bold;
 
     &:link {
         background: $white;
@@ -81,31 +140,21 @@ a.text__link-white {
     color: rgb(216, 216, 216) !important;
 }
 
-.hover {
+.hover-simple {
     transition: all .2s;
     &:hover{
         transform: translateY(-3px);
-        scale: 1.02;
+        scale: 0.95;
+    }
+}
+
+.hover {
+    @extend .hover-simple;
+    &:hover{
         text-decoration: underline;
     }
 }
 
-.hover-simple {
-    transition: all .2s;
-    &:hover{
-        transform: translateY(-3px);
-        scale: 1.02;
-    }
-}
-
-.hover-simple {
-    transition: all .2s;
-}
-
-.hover-simple:hover {
-    transform: translateY(-3px);
-    scale: 1.02;
-}
 
 .divider {
     display: block;
@@ -122,35 +171,16 @@ a.text__link-white {
     outline: none;
 }
 
+.img-full {
+    height: 500px;
+    width: 100%;
+}
+
+.b-1-white {
+    border: 1px solid $white;
+}
+
 // fin de misc y helpers
-
-// uso de scss
-
-$fonts: (
-    xs: 1rem,
-    sm: 1.5rem,
-    md: 1.75rem,
-    lg: 2rem,
-    xl: 3rem
-);
-
-@each $k, $v in $fonts {
-    .text-#{$k}{
-        font-size: $v;
-    }
-}
-
-@for $i from 1 through 5 {
-    .display-#{$i} {
-        font-size: 6rem / ($i - $i/2);
-        font-family: 'Staatliches', cursive;
-    }
-    .rounded-#{$i} {
-        border-radius: #{$i}rem;
-    }
-}
-
-// fin de uso de scss
 
 // experimental
 
@@ -158,25 +188,28 @@ $fonts: (
     position: relative;
     width:100%;
     display: inline-block;
-    background-image: url('.././images/about_me-baby.jpg');
+    // background-image: url('.././images/about_me-baby.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: $red;
-    border: 5px solid $white;
+    border: 2px solid $white;
 }
 
 // fin de experimental
 
 // clases main
 
-.main {
-    background-image: url('.././images/banner_real.png');
+main {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: $black;
+}
+
+.main__home {
+    @extend main;
 
     display: grid;
     grid-row-gap: 100px;
@@ -187,12 +220,8 @@ $fonts: (
         "footer";
 }
 
-.features__main {
-    background-image: url('.././images/banner_real.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.main__features {
+    @extend main;
 
     display: grid;
     grid-row-gap: 100px;
@@ -203,12 +232,8 @@ $fonts: (
         "footer";
 }
 
-.about-me__main {
-    background-image: url('.././images/banner_real.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.main__aboutme {
+    @extend main;
 
     display: grid;
     grid-row-gap: 100px;
@@ -219,13 +244,8 @@ $fonts: (
         "footer";
 }
 
-.contact__main {
-    background-image: url('.././images/banner_real.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: $black;
+.main__contact {
+    @extend main;
 
     min-height: 100vh;
     display: grid;
@@ -237,13 +257,8 @@ $fonts: (
         "footer";
 }
 
-.services__main {
-    background-image: url('.././images/banner_real.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: $red;
+.main__services {
+    @extend main;
 }
 
 // fin de clases main
@@ -264,7 +279,7 @@ $fonts: (
     right: 0;
     color: $white;
     display: flex;
-    font-size: 5rem;
+    font-size: map-get($map: $fonts, $key: xxl);
     justify-content: center;
     align-items: center;
     animation: fadeout .5s ease-in-out .5s forwards;
@@ -302,6 +317,7 @@ $fonts: (
     100% {
         opacity: 0;
         display: none;
+        visibility: hidden;
     }
 }
 
@@ -327,7 +343,7 @@ $fonts: (
         justify-content: center;
         align-items: center;
         & h1 {
-            font-size: 3rem;
+            font-size: map-get($map: $fonts, $key: xl);
             font-style: italic;
             font-family: $title-font;
             color: $white;
@@ -347,7 +363,7 @@ $fonts: (
             cursor: pointer;
             text-decoration: none;
             color: $white;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: lg);
         }
     }
     &-toggler {
@@ -392,13 +408,18 @@ $fonts: (
         font-weight: 300;
         line-height: 11rem;
         h1 {
-            font-size: 8rem;
+            font-size: map-get($map: $fonts, $key: xxl) + 3rem;
             line-height: 1;
         }
     }
+    h4 {
+        line-break: loose;
+        line-height: 1.5;
+        max-width: 600px;
+    }
     .btn-danger {
         background-color: $red;
-        font-size: 4rem;
+        font-size: map-get($map: $fonts, $key: xl);
         border-radius: 2rem;
         margin-left: 2rem;
     }
@@ -410,51 +431,51 @@ $fonts: (
 
 .features {
     min-height: fit-content;
-    // antes era justify-with-md con el container
     max-width: $justify-width;
     margin: 10% auto 5% auto;
     padding: 2rem 4rem 2rem 4rem;
+    grid-gap: 50px;
     color: $white;
 
-    /* opacity: 0;
-    transition: all .3s; */
+    // /* opacity: 0;
+    // transition: all .3s; */
 
-    grid-area: features;
-    &__subtitle {
-        font-style: italic;
-        font-size: 6rem;
-        font-family: $title-font;
-        margin: 2rem 0;
-        color: $white;
-        line-height: 1.2;
-        font-weight: 300;
-    }
+    // grid-area: features;
+    // &__subtitle {
+    //     font-style: italic;
+    //     font-size: map-get($map: $fonts, $key: xxl);
+    //     font-family: $title-font;
+    //     margin: 2rem 0;
+    //     color: $white;
+    //     line-height: 1.2;
+    //     font-weight: 300;
+    // }
 
-    &__container {
-        display: flex;
-        flex-flow: row wrap;
-        .row {
-            margin-right: 0px;
-            margin-left: 0px; 
-        }
-        .feature {
-            line-break: anywhere;
-            padding: 1rem;
-            img {
-                height: 15rem;
-                border: 2px solid $white;
-            }
-            h3 {
-                font-family: $title-font;
-                font-weight: 100;
-                margin: 1rem auto;
-                font-size: 4rem;
-            }
-            p {
-                font-size: 1.25rem;
-            }
-        }
-    }
+    // &__container {
+    //     display: flex;
+    //     flex-flow: row wrap;
+    //     .row {
+    //         margin-right: 0px;
+    //         margin-left: 0px; 
+    //     }
+    //     .feature {
+    //         line-break: anywhere;
+    //         padding: 1rem;
+    //         img {
+    //             height: 15rem;
+    //             border: 2px solid $white;
+    //         }
+    //         h3 {
+    //             font-family: $title-font;
+    //             font-weight: 100;
+    //             margin: 1rem auto;
+    //             font-size: map-get($map: $fonts, $key: xl);
+    //         }
+    //         p {
+    //             font-size: map-get($map: $fonts, $key: sm);
+    //         }
+    //     }
+    // }
 }
 
 //fin de componente features
@@ -477,7 +498,7 @@ $fonts: (
         p {
             line-height: 1.6;
             color: $white;
-            font-size: 1.8rem;
+            font-size: map-get($map: $fonts, $key: md);
             overflow-y: hidden;
         }
         img {
@@ -491,7 +512,7 @@ $fonts: (
             font-weight: 100;
             color: $white;
             margin: 3rem 3rem;
-            font-size: 4rem;
+            font-size: map-get($map: $fonts, $key: xl);
         }
         &:nth-child(1), &:nth-child(3) {
             display: flex;
@@ -500,15 +521,14 @@ $fonts: (
 
             p {
                 width: 60%;
-                padding-left: 2vw;
             }
         }
         .baby__img {
             position: relative;
             display: inline-block;
             width: 40%;
-            border: 5px solid $white;
-            background-image: url('.././images/about_me-baby.jpg');
+            border: 1px solid $white;
+            // background-image: url('.././images/about_me-baby.jpg');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -518,12 +538,16 @@ $fonts: (
             position: relative;
             display: inline-block;
             width: 40%;
-            border: 5px solid $white;
-            background-image: url('.././images/about_me-starting.jpg');
+            border: 1px solid $white;
+            // background-image: url('.././images/about_me-starting.jpg');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             background-color: $red;
+        }
+        .now__img {
+            border: 1px solid $white;
+            height: 500px;
         }
     }
 }
@@ -554,12 +578,12 @@ form {
         label {
             display: block;
             color: $white;
-            font-size: 3rem;
+            font-size: map-get($map: $fonts, $key: xl);
             margin-bottom: 1rem;
         }
         input {
             margin: 0;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: md);
             padding: 0.5rem 0;
             height: fit-content;
             display: block;
@@ -578,7 +602,7 @@ form {
         }
         select {
             margin: 0;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: lg);
             padding: 0.5rem 0;
             height: fit-content;
             display: block;
@@ -601,7 +625,7 @@ form {
         textarea {
             width: 100%;
             background: none;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: lg);
             padding: 0.5rem 0;
             height: fit-content;
             display: block;
@@ -660,7 +684,7 @@ form {
         .overlay__text {
             cursor: pointer;
             font-weight: bold;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: lg);
             font-family: $main-font;
             transition: all .3s;
             z-index: 999;
@@ -686,7 +710,7 @@ form {
         h3 {
             margin: 2rem auto;
             padding: 1rem;
-            font-size: 4rem;
+            font-size: map-get($map: $fonts, $key: xl);
             text-align: center;
             border-bottom: 1px solid red;
         
@@ -699,11 +723,11 @@ form {
         h4 {
             font-family: $title-font;
             font-weight: 100;
-            font-size: 4rem;
+            font-size: map-get($map: $fonts, $key: xl);
         }
         i {
             margin: 4rem 1rem;
-            font-size: 4rem;
+            font-size: map-get($map: $fonts, $key: xl);
         }
         hr {
             border-color: red;
@@ -712,12 +736,12 @@ form {
             line-break: strict;
             text-align: left;
             margin: 1rem auto;
-            font-size: 1.5rem;
+            font-size: map-get($map: $fonts, $key: sm);
         }
         ul {
             text-align: left;
             margin: 4rem auto;
-            font-size: 2rem;
+            font-size: map-get($map: $fonts, $key: md);
         }
         li {
             margin: 1rem auto 1rem 2rem;
@@ -743,7 +767,6 @@ form {
         padding-top: 5rem;
         padding-bottom: 5rem;
         a {
-            font-size: 3rem;
             background-color: red;
             padding: 0.5rem;
         }
@@ -765,7 +788,7 @@ form {
     justify-content: space-evenly;
     display: flex;
     flex-direction: row;
-    font-size: 1.5rem;
+    font-size: map-get($map: $fonts, $key: sm);
     padding-bottom: 1rem;
 
     &__logo {
@@ -774,7 +797,7 @@ form {
             text-transform: uppercase;
             font-family: $title-font;
             font-style: italic;
-            font-size: 6rem;
+            font-size: map-get($map: $fonts, $key: xxl);
         }
     }
     &__info {
@@ -783,7 +806,7 @@ form {
             margin-left: 1.5rem;
         }
         p {
-            font-size: 1.5rem;
+            font-size: map-get($map: $fonts, $key: sm);
         }
     }
     &__socials {
@@ -858,6 +881,11 @@ form {
         right: 10%;
     }
 
+    .features .row div {
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
+
     .biography {
         margin: 0;
         padding: 2rem;
@@ -902,7 +930,7 @@ form {
         align-content: center;
         text-align: center;
         &__logo {
-            font-size: 1rem;
+            font-size: map-get($map: $fonts, $key: xs);
             text-align: center;
         }
         &__info {
@@ -933,6 +961,13 @@ form {
     .btn-danger {
         margin-left: 0px;
     }
+    .babyimg {
+        height: 30vmin;
+    }
+
+    .features .row:nth-child(3) .col-md-4 {
+        order: 1;
+    }
 }
 
 @media screen and (max-width:499.98px) {
@@ -959,8 +994,8 @@ form {
     }
 
     .display-4 h1 {
-        font-size: 7.5rem;
+        font-size: map-get($map: $fonts, $key: xxl) + map-get($map: $fonts, $key: lg);
     }
 }
 
-//fin de media queries
+// fin de media queries
