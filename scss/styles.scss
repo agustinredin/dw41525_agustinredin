@@ -72,8 +72,16 @@ $content: (
         background-image: url($v);
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-color: $black;
+    };
+    @media screen and (max-width: 768px) {
+        .img-full {
+            height: 500px;
+        }
+    }
+    @media screen and (min-width: 768.01px) {
+        .h-500 {
+            height: 500px;
+        }
     }
 }
 
@@ -98,6 +106,12 @@ $content: (
 // fin de uso de scss
 
 // misc y helpers
+
+.img-full {    
+    width: 100%;
+    background-size: cover;
+    background-color: $black;
+}
 
 hr {
     background: $white;
@@ -156,6 +170,14 @@ a.text__link-white {
 }
 
 
+.red {
+    color:red;
+}
+
+.red-light {
+    color:rgb(255, 81, 81);
+}
+
 .divider {
     display: block;
     width: 24rem;
@@ -169,11 +191,6 @@ a.text__link-white {
     color: rgba(255, 255, 255, 0.75);
     background: rgba(243, 176, 176, 0.45);
     outline: none;
-}
-
-.img-full {
-    height: 500px;
-    width: 100%;
 }
 
 .b-1-white {
@@ -660,6 +677,8 @@ form {
 .services {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin: auto;
 
     .service:nth-child(1){
         margin-top: 50vh;
@@ -672,6 +691,8 @@ form {
         margin: 5vh 3vw 5vh 3vw;
         height: fit-content;
         display: block;
+        max-width: 20%;
+        border-radius: 20px;
         background-color: rgba(0, 0, 0, 0.65);
         backdrop-filter: blur(10px);
         border: 1px solid #00040312;
@@ -683,6 +704,7 @@ form {
 
         .overlay__text {
             cursor: pointer;
+            border-radius: 20px;
             font-weight: bold;
             font-size: map-get($map: $fonts, $key: lg);
             font-family: $main-font;
@@ -820,6 +842,32 @@ form {
 
 //media queries
 
+@media screen and (max-width: 1300px) {
+    .services {
+        flex-direction: column;
+
+        .service {
+            max-width: 100%;
+        }
+
+        .service:nth-child(1) {
+            margin-top: 0px;
+            margin: 3vh 0 3vh 0;
+            order: 1;
+        }
+    
+        .service:nth-child(2) {
+            margin-top: 0px;
+            margin: 3vh 0 3vh 0;
+        }
+    
+        .service:nth-child(3) {
+            margin-top: 0px;
+            margin: 3vh 0 3vh 0;
+        }
+    }
+}
+
 @media screen and (max-width: 1199.98px) {
     .features {
         border: none;
@@ -840,31 +888,6 @@ form {
         }
     }
 
-    .divider {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 991.98px) {
-    .services {
-        flex-direction: column;
-
-        .service:nth-child(1) {
-            margin-top: 0px;
-            margin: 3vh 0 3vh 0;
-            order: 1;
-        }
-    
-        .service:nth-child(2) {
-            margin-top: 0px;
-            margin: 3vh 0 3vh 0;
-        }
-    
-        .service:nth-child(3) {
-            margin-top: 0px;
-            margin: 3vh 0 3vh 0;
-        }
-    }
     .navbar{    
         &-nav {
             flex-direction: column;
@@ -873,6 +896,17 @@ form {
         &-toggler {
             background: white;
         }
+    }
+
+    .divider {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
     }
 
     .navbar-collapse {
@@ -898,10 +932,6 @@ form {
 @media screen and (max-width: 767.98px) {
     html {
         font-size: 50%;
-    }
-    .row {
-        margin-right: 0px !important;
-        margin-left: 0px !important;
     }
     @for $i from 1 through 12 {
         .col-sm-#{$i} {
