@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-$red: #FF0700;
+$red: #ff0000;
 $red-darker: rgba(190, 88, 88, 0.4);
 $red-accent: #f04738;
 $white: #EEEEEE;
@@ -439,6 +439,7 @@ main {
         font-size: map-get($map: $fonts, $key: xl);
         border-radius: 2rem;
         margin-left: 2rem;
+        border-color: $red;
     }
 }
 
@@ -453,118 +454,41 @@ main {
     padding: 2rem 4rem 2rem 4rem;
     grid-gap: 50px;
     color: $white;
-
-    // /* opacity: 0;
-    // transition: all .3s; */
-
-    // grid-area: features;
-    // &__subtitle {
-    //     font-style: italic;
-    //     font-size: map-get($map: $fonts, $key: xxl);
-    //     font-family: $title-font;
-    //     margin: 2rem 0;
-    //     color: $white;
-    //     line-height: 1.2;
-    //     font-weight: 300;
-    // }
-
-    // &__container {
-    //     display: flex;
-    //     flex-flow: row wrap;
-    //     .row {
-    //         margin-right: 0px;
-    //         margin-left: 0px; 
-    //     }
-    //     .feature {
-    //         line-break: anywhere;
-    //         padding: 1rem;
-    //         img {
-    //             height: 15rem;
-    //             border: 2px solid $white;
-    //         }
-    //         h3 {
-    //             font-family: $title-font;
-    //             font-weight: 100;
-    //             margin: 1rem auto;
-    //             font-size: map-get($map: $fonts, $key: xl);
-    //         }
-    //         p {
-    //             font-size: map-get($map: $fonts, $key: sm);
-    //         }
-    //     }
-    // }
 }
 
 //fin de componente features
 
-//experimental: componente features no contenido - grid
-
 //componente biography 
 
 .biography {
-    grid-area: biography;
-    max-width: $justify-width-md;
+    max-width: $justify-width;
     margin: auto;
-    border: 2px solid var(--red);
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 1vh 1vw 1vw;
-    &__block {
-        display: block;
-        margin-bottom: 6rem;
+    grid-area: biography;
+    .block {
+        &:first-child{
+            margin-right: auto;
+        }
+        &:not(:last-child){
+            margin-bottom: 5rem;
+        }
+
+        border: none;
+        border-top: 1px solid $red;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 3rem 5rem;
         p {
-            line-height: 1.6;
-            color: $white;
-            font-size: map-get($map: $fonts, $key: md);
-            overflow-y: hidden;
+            font-size: 1.5rem;
+            line-height: 1.8;  
         }
         img {
             width: 100%;
-            margin-bottom: 3rem;
-            border: 5px solid $white;
-        }
-        h3 {
-            text-align: center;
-            font-family: $title-font;
-            font-weight: 100;
-            color: $white;
-            margin: 3rem 3rem;
-            font-size: map-get($map: $fonts, $key: xl);
-        }
-        &:nth-child(1), &:nth-child(3) {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            p {
-                width: 60%;
-            }
-        }
-        .baby__img {
-            position: relative;
-            display: inline-block;
-            width: 40%;
-            border: 1px solid $white;
-            // background-image: url('.././images/about_me-baby.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: $red;
-        }
-        .starting__img {
-            position: relative;
-            display: inline-block;
-            width: 40%;
-            border: 1px solid $white;
-            // background-image: url('.././images/about_me-starting.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: $red;
-        }
-        .now__img {
-            border: 1px solid $white;
-            height: 500px;
+            height: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 15px;
+            border-top: 3px solid #FF0700;
         }
     }
 }
@@ -695,7 +619,7 @@ form {
         border-radius: 20px;
         background-color: rgba(0, 0, 0, 0.65);
         backdrop-filter: blur(10px);
-        border: 1px solid #00040312;
+        border-top: 1px solid $red;
         color: $white;
         padding: 2rem;
     
@@ -741,6 +665,10 @@ form {
 
         &__desc {
             text-align: center;
+            :first-child{
+                border-radius: 20px;
+                border-bottom: 1px solid red;
+            }
         }
         h4 {
             font-family: $title-font;
@@ -790,55 +718,13 @@ form {
         padding-bottom: 5rem;
         a {
             background-color: red;
+            border:none;
             padding: 0.5rem;
         }
     }
 }
 
 //fin de componente cta simple separador
-
-//componente footer 
-
-.footer {
-    width: 100%;
-    grid-area: footer;
-    z-index: 999;
-    color: $white;
-    position: relative;
-    bottom: 0;
-    text-align: left;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: row;
-    font-size: map-get($map: $fonts, $key: sm);
-    padding-bottom: 1rem;
-
-    &__logo {
-        text-align: center;
-        h3 {
-            text-transform: uppercase;
-            font-family: $title-font;
-            font-style: italic;
-            font-size: map-get($map: $fonts, $key: xxl);
-        }
-    }
-    &__info {
-        text-align: left;
-        h3 span {
-            margin-left: 1.5rem;
-        }
-        p {
-            font-size: map-get($map: $fonts, $key: sm);
-        }
-    }
-    &__socials {
-        display: flex;
-        gap: 2rem;
-        margin-top: 1rem;
-    }
-}
-
-//fin de componente footer
 
 //media queries
 
@@ -919,13 +805,16 @@ form {
         padding-top: 2vh;
         padding-bottom: 2vh;
     }
-
-    .biography {
-        margin: 0;
+    #navbarSupportedContent {
+        background: rgba(0, 0, 0, 0.4);
         padding: 2rem;
-        max-width: 100%;
-        border: none;
-        border-top: 1px solid $red;
+    }
+    .biography {
+        .block {
+            .display-3{
+                margin:auto;
+            }
+        }
     }
 }
 
