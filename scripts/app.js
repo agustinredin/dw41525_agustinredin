@@ -3,7 +3,7 @@ const init = () => {
     window.onload = function () {
         window.scrollTo(0, 0);
 
-        console.log("proj final entregado")
+        console.log("14.10: Proyecto final entregado")
       }
 
     $("form").on("submit", (e) => {
@@ -26,7 +26,6 @@ const init = () => {
     
     const __scroll = () => {
         $("body").css("overflow-y", "scroll");
-        console.log("scroll!")
     }
     
     $("#hamburger").on("click", function(e) {
@@ -41,7 +40,6 @@ const init = () => {
 
     let main = $("main").attr("class");
 
-    console.log(main)
     if(main.includes("contact")) {
         let serviceSelected = window.location.href.split('?q=');
         if(serviceSelected.length > 1)

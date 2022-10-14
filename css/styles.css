@@ -407,7 +407,8 @@ form {
   width: 70%;
   min-height: fit-content;
   margin: 0 auto 5vh auto;
-  border: 2px solid #ff0000;
+  border-radius: 15px;
+  border-top: 2px solid #ff0000;
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.4);
   padding: 2rem 4rem 2rem 4rem;
@@ -435,6 +436,11 @@ form {
     form .form-group input:focus-visible {
       background: rgba(190, 88, 88, 0.45);
       outline: none; }
+    form .form-group input:focus {
+      background: rgba(190, 88, 88, 0.45);
+      outline: none;
+      box-shadow: none;
+      border-color: none; }
   form .form-group select {
     margin: 0;
     font-size: 2rem;
